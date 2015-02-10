@@ -1,0 +1,49 @@
+<script>
+  function Location(name, hours, foot_traffic, percent_entering, donuts_per_entrant) {    //constructor function (cap 1st letter)
+    this.name = name;
+    this.hours = hours;            //var.property/key = value = 7
+    this.foot_traffic = foot_traffic;
+    this.percent_entering = percent_entering;
+    this.donuts_per_entrant = donuts_per_entrant;
+    this.totalDonuts = 0;
+    this.donutsEachHour = [];
+
+
+    this.random_foot_traffic = function() {
+      return Math.floor(Math.random() * (this.foot_traffic[1] - this.foot_traffic[0])) + this.foot_traffic[0] + 1;
+    }
+
+    this.donuts_per_hour = function() {
+      return Math.floor(this.random_foot_traffic() * (this.percent_entering/100) * (this.donuts_per_entrant) + .5);
+    }
+
+    this.bake = function() {
+      console.log("location:" + this.name)
+      for (var i = 0; i <= this.hours; i++){
+      this.donutsEachHour[i] = this.donuts_per_hour();
+      this.totalDonuts += this.donutsEachHour[i];
+      console.log("Hour " + i + ": " + this.donutsEachHour[i]);
+    }
+    console.log("Total Donuts: " + this.totalDonuts);
+}
+}
+  var downtown = new Location("downtown", 11, [10, 220], 10, 4);
+  var capitol_hill = new Location("capitol_hill", 11, [5, 45], 45, 2);
+  var south_lake_union = new Location ("south_lake_union", 11, [180,250], 5 , 6);
+  var wedgewood = new Location ("wedgewood", 11, [20, 60], 20, 1.5);
+  var ballard = new Location ("ballard", 11, [25, 175], 33, 1);
+
+
+    downtown.bake();
+    capitol_hill.bake();
+    south_lake_union.bake();
+    wedgewood.bake();
+    ballard.bake();
+
+
+
+
+  // }
+
+</script>
+
