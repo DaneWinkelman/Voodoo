@@ -1,0 +1,137 @@
+/* JavaScript & jQuery - Chapter 3: Functions, Methods & Programming */
+
+
+button {
+  font-size: 155%;
+  background-color: #D2E3DC;
+  margin-left: 12px;
+}
+
+header {
+  font-family: futura;
+  font-size: 60px;
+  padding-left: 80px;
+  padding-top:10px;
+  padding-bottom:35px;
+  background-color: #827971;
+  color: white;
+  /*margin-right: 50px;*/
+  width: 75%;
+}
+
+p {
+  padding-left: 80px;
+  padding-top:20px;
+  padding-bottom:50px;
+  background-color: #A7C9BA;
+  /*margin-right: 50px;*/
+  width: 100%;
+  text-transform: lowercase;
+  margin-top: -40px;
+  opacity: .5;
+  height: 40px;
+  margin-left: 25px;
+
+
+}
+
+p1 {
+  font-family: 'Montserrat Subrayada', sans-serif;
+  font-size: 50px;
+  position: absolute;
+  top: 140px;
+  left: 450px;
+  width: 250px;
+  color: #5D7068;
+}
+
+#z {
+  padding-left: 0px
+  padding-top: 0px
+  padding-bottom: 0px;
+  background-color: #A7C9BA;
+  /*margin-right: 50px;*/
+  width: 100%;
+  margin-top: 0px;
+  opacity: .5;
+  height: 0px;
+  margin-left: 0px;
+}
+
+#boy {
+  padding-left: 30px
+  padding-top: 0px
+  padding-bottom: 0px;
+  background-color: #827971;
+  /*margin-right: 50px;*/
+  width: 90%;
+  text-transform: lowercase;
+  margin-top: -40px;
+  margin-left: 30px;
+  height: -50px;
+
+
+}
+
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 2px;
+}
+
+
+button#clickMe1 {
+
+
+}
+
+}
+
+
+
+
+body {
+        width: 900px;
+        margin: 0 auto;
+        font-family: futura, Verdana, sans-serif;
+        color: #111111;}
+      table {
+        width: 900px;
+        background-color: #94A095);
+        border-bottom:2px solid #999;
+        border-top:2px solid #999;
+}
+      th, td {
+        padding: 7px 10px 10px 10px;}
+      th {
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 90%;
+        border-bottom: 2px solid #111111;
+        border-top: 1px solid #999;
+        text-align: left;}
+      tr.even {
+        background-color: #efefef;}
+      tr:hover {
+        background-color: #c3e6e5;
+
+      }
+      .money {
+        text-align: right;}
+
+
+
+
+
+
+
+
+
+
+
