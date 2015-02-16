@@ -2,30 +2,81 @@
 <html>
 
 <head>
+
     <title>VOODOO Donuts</title>
+    <link rel="icon"
+      type="image/png"
+      href="http://example.com/myicon.png">
     <link rel="stylesheet" href="Voodoo_part_2.css">
     <link href='http://fonts.googleapis.com/css?family=Montserrat+Subrayada:700' rel='stylesheet' type='text/css'>
-  </head>
+    <link rel="stylesheet" href="nivo-slider.css" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
+    <script src="jquery.nivo.slider.pack.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(window).load(function() {
+    $('#slider').nivoSlider();
+
+});
+</script>
+
+</head>
 
 
   <body>
 
-    <header>VOODOO</header>
-    <p></p>
-    <p1>Doughnuts</p1>
-    <section>
-      <form>
+<!--     <header>
+      <div id = "fixedheader" class = "grad">
+      <a id = "1" href="url">home</a>
+      <a href="url">about</a>
+      <a href="url">blog</a>
+      <a href="url">contact</a>
+      </div> -->
+<nav class="grad" id="fixedheader">
+  <a id = "1" href="file:///Users/danewinkelman/adronclone/Voodoo/Voodoo_part_2.html">home</a>
+  <a href="file:///Users/danewinkelman/adronclone/Voodoo/Voodoo_about.html">about</a>
+  <a href="url">blog</a>
+  <a href="url">contact</a>
+</nav>
 
-      </form>
-    </section>
+      <!-- <div>CONTACT</div> -->
+      <h1>VOODOO</h1>
+
+
+      <h2>Doughnuts</h2>
+      <div class = hvr-grow></div>
+
+    </header>
+    <!-- <p></p>
+    <p1>Doughnuts</p1> -->
     <section>
+      <!-- <form>
+
+      </form> -->
+    </section>
+
+      <!-- NIVO SLIDER -->
+    <div id="slider" class="nivoSlider">
+
+    <img src="voodoo1.jpg" alt="" /><a href="http://dev7studios.com">
+
+    <img src="voodoo2.jpg" alt="" title="" /></a>
+
+    </div>
+    <div id="htmlcaption" class="nivo-html-caption">
+    <!-- <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. -->
+    </div>
+
+    <!-- TABLE -->
+    <section>
+
+
       <table >
         <tr>
-          <td colspan="14"><button type = "button" id = "clickMe1">Downtown</button>
-    <button type = "button" id = "clickMe2">Capitol Hill</button>
-    <button type = "button" id = "clickMe3">South Lake Union</button>
-    <button type = "button" id = "clickMe4">Wedgewood</button>
-    <button type = "button" id = "clickMe5">Ballard</button>
+          <td colspan="14"><button type = "button" id = "clickMe1" class = "hvr-back-pulse">Downtown</button>
+          <button type = "button" id = "clickMe2" class = "hvr-back-pulse">Capitol Hill</button>
+          <button type = "button" id = "clickMe3" class = "hvr-back-pulse">South Lake Union</button>
+          <button type = "button" id = "clickMe4" class = "hvr-back-pulse">Wedgewood</button>
+          <button type = "button" id = "clickMe5" class = "hvr-back-pulse">Ballard</button>
         </td>
         </tr>
         <tr>
@@ -60,17 +111,19 @@
           <!-- <th>ballard</th> -->
         </tr>
         <tr>
-          <td colspan="14"><button type = "button" id = "clickMe6">RESTART</button></td>
+          <td colspan="14"><button type = "button" id = "clickMe6" class = "hvr-back-pulse">RESTART</button></td>
         </tr>
         </table>
-        <p id = "z"></p>
+        <div class = "tablefooter"></div>
 
     </section>
     <div id = "boy"></div>
 
 
 
-<script>
+ <script>
+
+
   function Location(name, hours, foot_traffic, percent_entering, donuts_per_entrant) {    //constructor function (cap 1st letter)
     this.name = name;
     this.hours = hours;            //var.property/key = value = 7
@@ -86,18 +139,23 @@
       return Math.floor(this.random_foot_traffic() * (this.percent_entering/100) * (this.donuts_per_entrant) + .5);
     };
 
-    this.createCell = function(data, element) {
-      var rowEl = document.getElementById(this.name); //this finds "this." and
-                                                    //stores it in a variable
-                                                    //named var rowEl.
-      var cellEl = document.createElement(element); //this creates a new element
-                                                    //and stores it in var cellEl
-      cellEl.textContent = data;  //This takes data and puts it in the new element
-                                  //stored in cellEl
-      rowEl.appendChild(cellEl);  //appendChild is taking the data element in cellEl
-                                  //and putting it in the this.name row found by rowEL
+    function createCell (data, element){
+        console.log("here!")
+      $(this.name).replaceWith(data).append(element);
+    }
 
-    };
+    // this.createCell = function(data, element) {
+    //   var rowEl = document.getElementById(this.name); //this finds "this." and
+    //                                                 //stores it in a variable
+    //                                                 //named var rowEl.
+    //   var cellEl = document.createElement(element); //this creates a new element
+    //                                                 //and stores it in var cellEl
+    //   cellEl.textContent = data;  //This takes data and puts it in the new element
+    //                               //stored in cellEl
+    //   rowEl.appendChild(cellEl);  //appendChild is taking the data element in cellEl
+    //                               //and putting it in the this.name row found by rowEL
+
+    // };
 
     this.bake = function() {
       var donutsPerHour,
@@ -105,18 +163,20 @@
       var mydiv = document.getElementById(this.name); //this finds this. and stores
                                                       //it aside in var mydiv
       while ( mydiv.firstChild ) mydiv.removeChild( mydiv.firstChild );
-      this.createCell(this.name, 'th');
+
+      createCell(this.name, 'th');
+
     //   mydiv = document.getElementById(this.name);
     // while ( mydiv.firstChild ) mydiv.appendChild( mydiv.this.name );
       for (var i = 0; i <= this.hours; i++){
         donutsPerHour = this.donutsPerHour();
         donutsPerDay += donutsPerHour;
         // console.log("Hour " + i + ": " + this.donutsEachHour[i]);
-        this.createCell(donutsPerHour, 'td');
+      createCell(donutsPerHour, 'td');
       };
 
       // console.log("Total Donuts: " + this.totalDonuts);
-      this.createCell(donutsPerDay, 'td');
+      createCell(donutsPerDay, 'td');
     }
   }
     var downtown = new Location("downtown", 11, [10, 220], 10, 4);
@@ -156,7 +216,9 @@
 
     document.getElementById("clickMe6").addEventListener("click",updateTable6)
 
-</script>
+
+
+// </script>
 </body>
 </html>
 

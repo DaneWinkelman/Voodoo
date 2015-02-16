@@ -1,13 +1,103 @@
 /* JavaScript & jQuery - Chapter 3: Functions, Methods & Programming */
 
 
+/*//FIXED//*/
+
+/*#main {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#nav, #feature, #footer {
+  padding: 10px;
+  margin: 10px;
+}*/
+
+/*//LIQUID//*/
+
+
+}
+
+a {
+  text-decoration: none;
+  font-family: futura;
+  font-size: 20px
+
+
+}
+nav {
+  padding-left: 700px;
+
+}
+nav a {
+  color: gray;
+  z-index: 5;
+  padding-left: 12px;
+
+}
+#fixedheader {
+
+  position:fixed;
+  width: 500%;
+  height: 40px;
+  color: white;
+  z-index: 2;
+  background-color: gray;
+  margin-top: -40px;
+  opacity: .8;
+  float: right;
+  text-decoration: none;
+  font-family: futura;
+  font-size: 20px
+}
+
+a:hover{
+
+color: #5D7068
+/*display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba (148, 160, 149, .75);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;*/
+
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+}
+
+body {
+  /*width: 90%;*/
+  margin: 0 auto;
+  padding: 0;
+}
+
+#nav, #feature, #footer {
+  margin: 1%;
+}
+
+.column, .comlumn2, #footer {
+  width: 31.3%;
+  float: left;
+  margin: 1%;
+}
+
 button {
   font-size: 155%;
   background-color: #D2E3DC;
-  margin-left: 12px;
+  margin-left: 19px;
 }
 
-header {
+h1{
+  margin-top:50px;
   font-family: futura;
   font-size: 60px;
   padding-left: 80px;
@@ -17,21 +107,194 @@ header {
   color: white;
   /*margin-right: 50px;*/
   width: 75%;
+  transition: all 500ms ease;
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
+  transition-delay: initial;
+
 }
 
-p {
-  padding-left: 80px;
-  padding-top:20px;
+
+
+/* Fade */
+.hvr-fade {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}
+.hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active {
+  background-color: #2098d1;
+  color: white;
+}
+
+
+
+
+
+  /*fade to color*/
+div.fade {
+  background-color:white;
+  /* First we need to help some browsers along for this to work.
+     Just because a vendor prefix is there, doesn't mean it will
+     work in a browser made by that vendor either, it's just for
+     future-proofing purposes I guess. */
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  /* ...and now for the proper property */
+  transition:.5s;
+}
+div.fade:hover { background-color:black; }
+
+.grad {
+  background: -webkit-linear-gradient(white, rgba(148, 160, 149, 1)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white, rgba(148, 160, 149, 1)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white, rgba(148, 160, 149, 1)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, rgba(148, 160, 149, 1)); /* Standard syntax */
+}
+
+.about1 {
+  font-family: futura;
+  width: 300px;
+  padding-left: 20px;
+  float: clear;
+  font-size: 20px;
+}
+
+.about {
+  font-family: futura;
+  width: 300px;
+  padding-left: 20px;
+  float: left;
+  font-size: 20px;
+}
+
+h3 {
+  font-family: futura;
+  width: 300px;
+  padding-left: 20px;
+  float: clear;
+  font-size: 24px;
+  font-weight: bold;
+  border-top: 2px  solid black;
+  border-bottom: 2px  solid black;
+  float:left;
+  margin-top: -2px;
+  margin-bottom: -.7px;
+  background-color: #EAECEB;
+  padding-top: 5px;
+
+
+}
+
+
+  .hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+@-webkit-keyframes hvr-back-pulse {
+  50% {
+    background-color: rgba(148, 160, 149, .75);
+  }
+}
+
+@keyframes hvr-back-pulse {
+  50% {
+    background-color: rgba148, 160, 149, .75);
+  }
+}
+
+.hvr-back-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}
+.hvr-back-pulse:hover, .hvr-back-pulse:focus, .hvr-back-pulse:active {
+  -webkit-animation-name: hvr-back-pulse;
+  animation-name: hvr-back-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-color: #5D7068;
+  background-color: #5D7068;
+  color: white;
+}
+
+h2 {
+  position: relative;
+  z-index: 1;
+  padding-left: 400px;
+  padding-top:35px;
   padding-bottom:50px;
-  background-color: #A7C9BA;
+  background-color: rgba(167, 201, 186, .5);
   /*margin-right: 50px;*/
   width: 100%;
-  text-transform: lowercase;
-  margin-top: -40px;
-  opacity: .5;
+  margin-top: -75px;
   height: 40px;
   margin-left: 25px;
+  font-family: 'Montserrat Subrayada', sans-serif;
+  font-size: 50px;
+  color: #5D7068;
+}
 
+div.tablefooter {
+  position: relative;
+  z-index: 1;
+  padding-left: 400px;
+  padding-top:35px;
+  padding-bottom:0px;
+  background-color: rgba(167, 201, 186, .5);
+  /*margin-right: 50px;*/
+  width: 100%;
+  margin-top: 0px;
+  height: -25px;
+  margin-left: -10px;
+  font-family: 'Montserrat Subrayada', sans-serif;
+  font-size: 50px;
+  color: #5D7068;
+  margin: none;
 
 }
 
@@ -97,18 +360,21 @@ button#clickMe1 {
 
 
 body {
-        width: 900px;
+        width: 950px;
         margin: 0 auto;
         font-family: futura, Verdana, sans-serif;
         color: #111111;}
       table {
-        width: 900px;
+        width: 950px;
         background-color: #94A095);
         border-bottom:2px solid #999;
         border-top:2px solid #999;
 }
       th, td {
-        padding: 7px 10px 10px 10px;}
+        padding: 7px 10px 10px 10px;
+        border-bottom:2px solid #999;
+
+      }
       th {
         text-transform: uppercase;
         letter-spacing: 0.1em;
@@ -124,6 +390,32 @@ body {
       }
       .money {
         text-align: right;}
+
+.box {
+      cursor: pointer;
+      position: absolute;
+      height: 200px;
+      width: 300px;
+      background-image: url(http://www.fondoswiki.com/Uploads/fondoswiki.com/ImagenesGrandes/luffy-sombrero-paja.jpg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 80%;
+      background-color: lightsteelblue;
+      border: 1px solid steelblue;
+      text-align: center;
+      transition:
+        transform 3000ms,
+        opacity 1500ms;
+
+
+
+
+    }
+
+    .box:hover {
+
+      transform: scale(.25) translateX(200px);
+      opacity: 0.5;
 
 
 
