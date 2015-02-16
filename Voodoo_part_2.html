@@ -3,6 +3,7 @@
 
 <head>
 
+
     <title>VOODOO Donuts</title>
     <link rel="icon"
       type="image/png"
@@ -22,7 +23,9 @@
 </head>
 
 
+
   <body>
+
 
 <!--     <header>
       <div id = "fixedheader" class = "grad">
@@ -79,6 +82,16 @@
           <button type = "button" id = "clickMe5" class = "hvr-back-pulse">Ballard</button>
         </td>
         </tr>
+
+    <header>VOODOO Donuts - Production Simulator</header>
+    <section>
+      <form>
+
+      </form>
+    </section>
+    <section>
+      <table>
+
         <tr>
           <th>location</th>
           <th>7 am</th>
@@ -95,6 +108,7 @@
           <th>6 pm</th>
           <th>total</th>
         </tr>
+
         <tr id="downtown" class= "replaceable">
           <!-- <th>downtown</th> -->
         </tr>
@@ -139,6 +153,7 @@
       return Math.floor(this.random_foot_traffic() * (this.percent_entering/100) * (this.donuts_per_entrant) + .5);
     };
 
+
     function createCell (data, element){
         console.log("here!")
       $(this.name).replaceWith(data).append(element);
@@ -157,9 +172,14 @@
 
     // };
 
+
+
+
+
     this.bake = function() {
       var donutsPerHour,
           donutsPerDay = 0;
+
       var mydiv = document.getElementById(this.name); //this finds this. and stores
                                                       //it aside in var mydiv
       while ( mydiv.firstChild ) mydiv.removeChild( mydiv.firstChild );
@@ -168,6 +188,8 @@
 
     //   mydiv = document.getElementById(this.name);
     // while ( mydiv.firstChild ) mydiv.appendChild( mydiv.this.name );
+
+
       for (var i = 0; i <= this.hours; i++){
         donutsPerHour = this.donutsPerHour();
         donutsPerDay += donutsPerHour;
@@ -177,6 +199,10 @@
 
       // console.log("Total Donuts: " + this.totalDonuts);
       createCell(donutsPerDay, 'td');
+
+
+
+
     }
   }
     var downtown = new Location("downtown", 11, [10, 220], 10, 4);
@@ -219,6 +245,8 @@
 
 
 // </script>
+
+
 </body>
 </html>
 

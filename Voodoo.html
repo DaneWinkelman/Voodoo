@@ -1,37 +1,101 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>VOODOO Donuts</title>
+    <link rel="stylesheet" href="">
+  </header>
+
+
+  <body>
+
+    <header>VOODOO Donuts - Production Simulator</header>
+    <section>
+      <form>
+
+      </form>
+    </section>
+    <section>
+      <table>
+        <tr>
+          <th>location</th>
+          <th>7 am</th>
+          <th>8 am</th>
+          <th>9 am</th>
+          <th>10 am</th>
+          <th>11 am</th>
+          <th>12 pm</th>
+          <th>1 pm</th>
+          <th>2 pm</th>
+          <th>3 pm</th>
+          <th>4 pm</th>
+          <th>5 pm</th>
+          <th>6 pm</th>
+          <th>total</th>
+        </tr>
+        <tr id="downtown">
+          <th>downtown</th>
+        </tr>
+        <tr id="capitol_hill">
+          <th>capitol hill</th>
+        </tr>
+        <tr id="south_lake_union">
+          <th>south lake union</th>
+        </tr>
+        <tr id="wedgewood">
+          <th>wedgewood</th>
+        </tr>
+        <tr id="ballard">
+          <th>ballard</th>
+        </tr>
+      </table>
+    </section>
+
 <script>
   function Location(name, hours, foot_traffic, percent_entering, donuts_per_entrant) {    //constructor function (cap 1st letter)
     this.name = name;
     this.hours = hours;            //var.property/key = value = 7
-    this.foot_traffic = foot_traffic;
+    this.foot_traffic = foot_traffic;      //Parameters
     this.percent_entering = percent_entering;
     this.donuts_per_entrant = donuts_per_entrant;
-    this.totalDonuts = 0;
-    this.donutsEachHour = [];
-
 
     this.random_foot_traffic = function() {
-      return Math.floor(Math.random() * (this.foot_traffic[1] - this.foot_traffic[0])) + this.foot_traffic[0] + 1;
-    }
+      return Math.floor(Math.random() * (this.foot_traffic[1] - this.foot_traffic[0]+1)) + this.foot_traffic[0];
+    };
 
-    this.donuts_per_hour = function() {
+    this.donutsPerHour = function() {
       return Math.floor(this.random_foot_traffic() * (this.percent_entering/100) * (this.donuts_per_entrant) + .5);
-    }
+    };
+
+    this.createCell = function(data) {
+      var rowEl = document.getElementById(this.name);
+      var cellEl = document.createElement('td');
+      cellEl.textContent = data;  //cellEl
+      rowEl.appendChild(cellEl);  //appendChild is taking the cellEl data
+                                  //and putting it in the this.name rows found by rowEL
+
+    };
 
     this.bake = function() {
-      console.log("location:" + this.name)
+      var donutsPerHour,
+          donutsPerDay = 0;
+
       for (var i = 0; i <= this.hours; i++){
-      this.donutsEachHour[i] = this.donuts_per_hour();
-      this.totalDonuts += this.donutsEachHour[i];
-      console.log("Hour " + i + ": " + this.donutsEachHour[i]);
+        donutsPerHour = this.donutsPerHour();
+        donutsPerDay += donutsPerHour;
+        // console.log("Hour " + i + ": " + this.donutsEachHour[i]);
+        this.createCell(donutsPerHour);
+      };
+
+      // console.log("Total Donuts: " + this.totalDonuts);
+      this.createCell(donutsPerDay);
     }
-    console.log("Total Donuts: " + this.totalDonuts);
-}
-}
-  var downtown = new Location("downtown", 11, [10, 220], 10, 4);
-  var capitol_hill = new Location("capitol_hill", 11, [5, 45], 45, 2);
-  var south_lake_union = new Location ("south_lake_union", 11, [180,250], 5 , 6);
-  var wedgewood = new Location ("wedgewood", 11, [20, 60], 20, 1.5);
-  var ballard = new Location ("ballard", 11, [25, 175], 33, 1);
+  }
+    var downtown = new Location("downtown", 11, [10, 220], 10, 4);
+    var capitol_hill = new Location("capitol_hill", 11, [5, 45], 45, 2);
+    var south_lake_union = new Location ("south_lake_union", 11, [180,250], 5 , 6);
+    var wedgewood = new Location ("wedgewood", 11, [20, 60], 20, 1.5);
+    var ballard = new Location ("ballard", 11, [25, 175], 33, 1);
 
 
     downtown.bake();
@@ -40,10 +104,33 @@
     wedgewood.bake();
     ballard.bake();
 
+//     // Create a new element and store it in a variable.
+// var newEl = document.createElement('tr');
+// var newEl = document.createElement('tr');
 
+// // Create a text node and store it in a variable.
+// var newText = document.createTextNode(this.name);
+
+// // Attach the new text node to the new element.
+// newEl.appendChild(newText);
+
+// // Find the position where the new element should be added.
+// var position = document.getElementById('z')[0];
+
+// // Insert the new element into its position.
+// position.appendChild(newEl);
+
+//     // for (var i = 0; i < shops.length; i++){
+    //   document.getElementById("location")
+    // }
 
 
   // }
-
+  // var a =[];
+  // a.push (null);
+  // console.log(a)
 </script>
+</body>
+</html>
+
 
