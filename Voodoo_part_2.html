@@ -83,7 +83,7 @@
         </td>
         </tr>
 
-    <header>VOODOO Donuts - Production Simulator</header>
+    <!-- <header>VOODOO Donuts - Production Simulator</header> -->
     <section>
       <form>
 
@@ -154,55 +154,42 @@
     };
 
 
-    function createCell (data, element){
-        console.log("here!")
-      $(this.name).replaceWith(data).append(element);
-    }
-
-    // this.createCell = function(data, element) {
-    //   var rowEl = document.getElementById(this.name); //this finds "this." and
-    //                                                 //stores it in a variable
-    //                                                 //named var rowEl.
-    //   var cellEl = document.createElement(element); //this creates a new element
-    //                                                 //and stores it in var cellEl
-    //   cellEl.textContent = data;  //This takes data and puts it in the new element
-    //                               //stored in cellEl
-    //   rowEl.appendChild(cellEl);  //appendChild is taking the data element in cellEl
-    //                               //and putting it in the this.name row found by rowEL
-
-    // };
 
 
 
 
+    this.createCell = function(data, element) {
+      var rowEl = $(this.name)
+      var rowEl = document.getElementById(this.name); //this finds "this." and
+                                                    //stores it in a variable
+                                                    //named var rowEl.
+      var cellEl = document.createElement(element); //this creates a new element
+                                                    //and stores it in var cellEl
+      cellEl.textContent = data;  //This takes data and puts it in the new element
+                                  //stored in cellEl
+      rowEl.appendChild(cellEl);  //appendChild is taking the data element in cellEl
+                                  //and putting it in the this.name row found by rowEL
+
+    };
 
     this.bake = function() {
       var donutsPerHour,
           donutsPerDay = 0;
-
       var mydiv = document.getElementById(this.name); //this finds this. and stores
                                                       //it aside in var mydiv
       while ( mydiv.firstChild ) mydiv.removeChild( mydiv.firstChild );
-
-      createCell(this.name, 'th');
-
+      this.createCell(this.name, 'th');
     //   mydiv = document.getElementById(this.name);
     // while ( mydiv.firstChild ) mydiv.appendChild( mydiv.this.name );
-
-
       for (var i = 0; i <= this.hours; i++){
         donutsPerHour = this.donutsPerHour();
         donutsPerDay += donutsPerHour;
         // console.log("Hour " + i + ": " + this.donutsEachHour[i]);
-      createCell(donutsPerHour, 'td');
+        this.createCell(donutsPerHour, 'td');
       };
 
       // console.log("Total Donuts: " + this.totalDonuts);
-      createCell(donutsPerDay, 'td');
-
-
-
-
+      this.createCell(donutsPerDay, 'td');
     }
   }
     var downtown = new Location("downtown", 11, [10, 220], 10, 4);
@@ -241,8 +228,6 @@
     document.getElementById("clickMe5").addEventListener("click",updateTable5)
 
     document.getElementById("clickMe6").addEventListener("click",updateTable6)
-
-
 
 // </script>
 
